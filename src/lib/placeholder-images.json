@@ -1,0 +1,88 @@
+{
+  "placeholderImages": [
+    {
+      "id": "news-hero",
+      "description": "Professional news and data center",
+      "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "news tech"
+    },
+    {
+      "id": "drama-hero",
+      "description": "Cinematic emotional scene",
+      "imageUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "cinema"
+    },
+    {
+      "id": "travel-hero",
+      "description": "Beautiful travel destination landscape",
+      "imageUrl": "https://images.unsplash.com/photo-1469474968028-56623f02ffd9?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "travel"
+    },
+    {
+      "id": "lifestyle-hero",
+      "description": "Modern workspace and idea",
+      "imageUrl": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "workspace"
+    },
+    {
+      "id": "gourmet-hero",
+      "description": "Premium delicious food photo",
+      "imageUrl": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "food"
+    },
+    {
+      "id": "vlog-hero",
+      "description": "Breathtaking night sea and sky",
+      "imageUrl": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "night sea"
+    },
+    {
+      "id": "vlog-sub-1",
+      "description": "Milky way and stars in the night sky",
+      "imageUrl": "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "milky way"
+    },
+    {
+      "id": "vlog-sub-2",
+      "description": "Mystical forest and nature",
+      "imageUrl": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "nature"
+    },
+    {
+      "id": "tips-hero",
+      "description": "Productivity and creative ideas",
+      "imageUrl": "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "idea"
+    },
+    {
+      "id": "drama-sub-1",
+      "description": "Drama recording and cameras",
+      "imageUrl": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "drama"
+    },
+    {
+      "id": "drama-sub-2",
+      "description": "Clapperboard and movie set",
+      "imageUrl": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "movie"
+    },
+    {
+      "id": "travel-sub-1",
+      "description": "Beautiful modern city view",
+      "imageUrl": "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "city"
+    },
+    {
+      "id": "travel-sub-2",
+      "description": "Asian traditional architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1541339907198-e08756c83f2d?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "culture"
+    },
+    {
+      "id": "travel-sub-3",
+      "description": "A bustling street and market",
+      "imageUrl": "https://images.unsplash.com/photo-1590603740183-980e7f6920eb?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "street"
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "사용자의 프로필 정보",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" }
+      },
+      "required": ["uid", "email"]
+    },
+    "WorkationPackage": {
+      "title": "WorkationPackage",
+      "description": "생성된 여행 콘텐츠 패키지",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "location": { "type": "string" },
+        "durationDays": { "type": "number" },
+        "theme": { "type": "string" },
+        "language": { "type": "string", "enum": ["ko", "en", "ja", "zh"] },
+        "localGuide": { "type": "string" },
+        "accommodationIntro": { "type": "string" },
+        "travelItinerary": { "type": "string" },
+        "newsletterContent": { "type": "string" },
+        "snsCaption": { "type": "string" },
+        "views": { "type": "number", "description": "조회수" },
+        "externalLink": { "type": "string", "description": "외부 연결 마케팅 링크" },
+        "youtubeUrl": { "type": "string", "description": "유튜브 영상 주소" },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["location", "durationDays", "localGuide", "accommodationIntro", "travelItinerary", "newsletterContent", "snsCaption", "createdBy", "language"]
+    },
+    "VisualAsset": {
+      "title": "VisualAsset",
+      "description": "생성된 비주얼 에셋 이미지",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "topic": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "assetType": { "type": "string", "enum": ["blogCover", "snsCard"] },
+        "createdBy": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["topic", "imageUrl", "createdBy", "assetType"]
+    }
+  },
+  "auth": {
+    "providers": ["password"]
+  },
+  "firestore": {
+    "/packages/{packageId}": {
+      "schema": "WorkationPackage",
+      "description": "생성된 여행 패키지 컬렉션"
+    },
+    "/visualAssets/{assetId}": {
+      "schema": "VisualAsset",
+      "description": "생성된 이미지 자산 컬렉션"
+    }
+  }
+}

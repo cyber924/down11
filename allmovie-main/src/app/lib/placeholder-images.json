@@ -1,0 +1,53 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "news-hero",
+      "description": "Professional news studio background",
+      "imageUrl": "https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "news broadcast"
+    },
+    {
+      "id": "drama-hero",
+      "description": "Cinematic K-drama style scene",
+      "imageUrl": "https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "cinema movie"
+    },
+    {
+      "id": "travel-hero",
+      "description": "Beautiful Korean landscape for travel",
+      "imageUrl": "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "korean travel"
+    },
+    {
+      "id": "lifestyle-hero",
+      "description": "Modern lifestyle and workspace",
+      "imageUrl": "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "modern workspace"
+    },
+    {
+      "id": "gourmet-hero",
+      "description": "Delicious Korean food close up",
+      "imageUrl": "https://images.unsplash.com/photo-1553163147-622ab57b682c?auto=format&fit=crop&w=1200&q=80",
+      "imageHint": "korean food"
+    },
+    {
+      "id": "drama-sub-1",
+      "description": "K-Drama scene with emotional lighting",
+      "imageUrl": "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "drama emotion"
+    },
+    {
+      "id": "drama-sub-2",
+      "description": "Movie clapperboard and set",
+      "imageUrl": "https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "movie production"
+    },
+    {
+      "id": "travel-sub-1",
+      "description": "Modern Seoul city view",
+      "imageUrl": "https://images.unsplash.com/photo-1538669715515-5c3758c07cb7?auto=format&fit=crop&w=800&q=80",
+      "imageHint": "seoul city"
+    }
+  ]
+}

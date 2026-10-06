@@ -1,0 +1,19 @@
+import { config } from 'dotenv';
+config();
+
+import '@/ai/flows/generate-visual-assets-for-content.ts';
+import '@/ai/flows/generate-one-click-workation-package-flow.ts';
+import '@/ai/flows/bulk-content-generation-for-regions.ts';
+import '@/ai/flows/multi-agent-collaboration-flow.ts';
+import '@/ai/flows/intelligent-editor-flow.ts';
+import '@/ai/flows/generate-hotel-content-flow.ts';
+import '@/ai/flows/recommend-hotel-details-flow.ts';
+import '@/ai/flows/generate-tour-content-flow.ts';
+import '@/ai/flows/recommend-tour-details-flow.ts';
+import '@/ai/flows/generate-policy-content-flow.ts';
+import '@/ai/flows/recommend-policy-details-flow.ts';
+import '@/ai/flows/generate-one-click-enter-package-flow.ts';
+import '@/ai/flows/recommend-life-details-flow.ts';
+import '@/ai/flows/recommend-culture-details-flow.ts';
+import '@/ai/flows/recommend-gourmet-details-flow.ts';
+import '@/ai/flows/bulk-entertainment-factory-flow.ts';

@@ -1,0 +1,158 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 225 33% 97%;
+    --foreground: 225 65% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 65% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 225 65% 10%;
+    --primary: 225 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 20% 90%;
+    --secondary-foreground: 225 65% 20%;
+    --muted: 225 10% 92%;
+    --muted-foreground: 225 20% 40%;
+    --accent: 186 80% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 225 20% 88%;
+    --input: 225 20% 88%;
+    --ring: 225 65% 45%;
+    --radius: 0.75rem;
+  }
+  .dark {
+    --background: 225 40% 5%;
+    --foreground: 225 20% 95%;
+    --card: 225 40% 8%;
+    --card-foreground: 225 20% 95%;
+    --popover: 225 40% 8%;
+    --popover-foreground: 225 20% 95%;
+    --primary: 225 65% 55%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 225 30% 15%;
+    --secondary-foreground: 225 20% 95%;
+    --muted: 225 30% 15%;
+    --muted-foreground: 225 20% 60%;
+    --accent: 186 80% 55%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 225 20% 95%;
+    --border: 225 30% 20%;
+    --input: 225 30% 20%;
+    --ring: 225 65% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.font-headline {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(150px, auto);
+  gap: 1.5rem;
+}
+
+/* --- Article Content Global Styles (Consolidated) --- */
+
+/* Common Link Style in Articles */
+.article-content-blog a,
+.news-feed-content a,
+.news-article-content a,
+.article-content-webzine a,
+.editorial-content a {
+  color: #0ea5e9 !important;
+  font-weight: 800;
+  text-decoration: underline;
+  pointer-events: auto !important;
+}
+
+.article-content-blog a:hover,
+.news-feed-content a:hover,
+.news-article-content a:hover,
+.article-content-webzine a:hover,
+.editorial-content a:hover {
+  opacity: 0.8;
+}
+
+/* Free View Link Helper (Used across Studio) */
+.free-view-link a {
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  color: #64748b !important;
+  text-decoration: none !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  transition: color 0.3s !important;
+  pointer-events: auto !important;
+}
+
+.free-view-link a:hover {
+  color: #0ea5e9 !important;
+  text-decoration: underline !important;
+}
+
+/* Specific Webzine Styling for Free View */
+.article-content-webzine .free-view-link a {
+  color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.article-content-webzine .free-view-link a:hover {
+  color: #0ea5e9 !important;
+}
+
+/* News Feed Content Spacing */
+.news-feed-content p,
+.news-article-content p {
+  margin-bottom: 1.5rem;
+}
+
+/* Line Clamp Helpers */
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Marquee Animation for News Ticker */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  animation: marquee 30s linear infinite;
+  width: fit-content;
+}
+
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}

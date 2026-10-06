@@ -1,0 +1,14 @@
+
+User-agent: *
+Allow: /
+Disallow: /editor/
+Disallow: /packages/
+Disallow: /package/
+Disallow: /factory/
+Disallow: /visuals/
+Disallow: /templates/
+Disallow: /wordpress/
+
+Sitemap: https://allmovie.shop/sitemap.xml
+Sitemap: https://moviefree.store/sitemap.xml
+Sitemap: https://down1.co.kr/sitemap.xml

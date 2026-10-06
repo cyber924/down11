@@ -1,0 +1,6 @@
+{
+  "name": "M-BLOG STUDIO",
+  "description": "원클릭 AI 여행 블로그 포스팅 & K-드라마 분석 스튜디오 - 국내 워케이션 숙소 추천, K-드라마 복선 해석, 워드프레스 다국어 자동 발행 지원",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
