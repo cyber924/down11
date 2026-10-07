@@ -90,10 +90,10 @@ export default function PackagePage() {
     toast({ title: "복사 완료", description: "클립보드에 복사되었습니다." });
   };
 
-  const getStaticImage = (theme: string) => {
+  const getStaticImage = (theme: string): string => {
     const themeUpper = theme?.toUpperCase() || "";
-    if (themeUpper.includes('GOURMET') || themeUpper.includes('미식') || themeUpper.includes('FOOD')) return PlaceHolderImages.find(img => img.id === 'gourmet-hero')?.imageUrl;
-    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl;
+    if (themeUpper.includes('GOURMET') || themeUpper.includes('미식') || themeUpper.includes('FOOD')) return PlaceHolderImages.find(img => img.id === 'gourmet-hero')?.imageUrl || "";
+    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl || "";
   };
 
   const renderMappedContent = (html: string) => {
@@ -120,10 +120,10 @@ export default function PackagePage() {
 
           if (isGourmet) {
              const subId = gourmetSubs[imgCounter % gourmetSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage('GOURMET');
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage('GOURMET') || null;
           } else {
              const subId = travelSubs[imgCounter % travelSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage('TRAVEL');
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage('TRAVEL') || null;
           }
         }
 

@@ -63,13 +63,13 @@ export default function WebzineLandingPage() {
     return (match && match[2].length === 11) ? `https://www.youtube.com/embed/${match[2]}` : null;
   };
 
-  const getStaticImage = (theme: string) => {
+  const getStaticImage = (theme: string): string => {
     const themeUpper = theme?.toUpperCase() || "";
-    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl;
-    if (themeUpper === 'GOURMET' || themeUpper === 'HOTEL') return PlaceHolderImages.find(img => img.id === 'gourmet-hero')?.imageUrl;
-    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl;
-    if (themeUpper === 'TIPS') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl;
-    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl;
+    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl || "";
+    if (themeUpper === 'GOURMET' || themeUpper === 'HOTEL') return PlaceHolderImages.find(img => img.id === 'gourmet-hero')?.imageUrl || "";
+    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl || "";
+    if (themeUpper === 'TIPS') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl || "";
+    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl || "";
   };
 
   const renderMappedHeroContent = (html: string) => {
@@ -91,13 +91,13 @@ export default function WebzineLandingPage() {
 
           if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) {
              const subId = dramaSubs[imgCounter % dramaSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           } else if (themeUpper === 'VLOG') {
              const subId = vlogSubs[imgCounter % vlogSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           } else {
              const subId = travelSubs[imgCounter % travelSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           }
         }
 

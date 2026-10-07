@@ -215,7 +215,7 @@ export default function EnterPage() {
     }
     setManualLoading(true);
     try {
-      const output = await generateOneClickEnterPackage(manualFormData);
+      const output = await generateOneClickEnterPackage(manualFormData as any);
 
       if (user && db) {
         const docRef = await addDoc(collection(db, "packages"), {

@@ -59,15 +59,15 @@ export default function NewsDetailClient({ id, initialData }: { id: string, init
     return 'Just now';
   };
 
-  const getStaticImage = (theme: string) => {
+  const getStaticImage = (theme: string): string => {
     const themeUpper = theme?.toUpperCase() || "";
-    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl;
-    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl;
-    if (themeUpper === 'TIPS' || themeUpper === 'POLICY') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl;
+    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl || "";
+    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl || "";
+    if (themeUpper === 'TIPS' || themeUpper === 'POLICY') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl || "";
     if (['GOURMET', 'HOTEL', 'TOUR', 'TRAVEL', 'CULTURE', 'LIFE'].includes(themeUpper)) {
-       return PlaceHolderImages.find(img => img.id === (themeUpper === 'GOURMET' ? 'gourmet-hero' : 'travel-hero'))?.imageUrl;
+       return PlaceHolderImages.find(img => img.id === (themeUpper === 'GOURMET' ? 'gourmet-hero' : 'travel-hero'))?.imageUrl || "";
     }
-    return PlaceHolderImages.find(img => img.id === 'news-hero')?.imageUrl;
+    return PlaceHolderImages.find(img => img.id === 'news-hero')?.imageUrl || "";
   };
 
   const renderMappedContent = (html: string) => {
@@ -95,16 +95,16 @@ export default function NewsDetailClient({ id, initialData }: { id: string, init
 
           if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) {
              const subId = dramaSubs[imgCounter % dramaSubs.length];
-             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme);
+             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme) || null;
           } else if (themeUpper === 'VLOG') {
              const subId = vlogSubs[imgCounter % vlogSubs.length];
-             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme);
+             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme) || null;
           } else if (themeUpper === 'TIPS' || themeUpper === 'POLICY') {
              const subId = tipsSubs[imgCounter % tipsSubs.length];
-             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme);
+             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme) || null;
           } else {
              const subId = travelSubs[imgCounter % travelSubs.length];
-             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme);
+             finalSrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(post.theme) || null;
           }
         }
 

@@ -69,7 +69,7 @@ const bulkContentGenerationForRegionsFlow = ai.defineFlow(
   },
   async input => {
     const {parentRegionName, subRegions, language} = input;
-    const generatedContents: ContentPieceOutputSchema[] = [];
+    const generatedContents: z.infer<typeof ContentPieceOutputSchema>[] = [];
 
     for (const subRegion of subRegions) {
       const {output} = await withRetry(() => generateRegionContentPrompt({

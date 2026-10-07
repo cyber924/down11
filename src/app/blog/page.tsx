@@ -56,15 +56,15 @@ export default function BlogLandingPage() {
 
   const heroPost = filteredData[0] as any;
 
-  const getStaticImage = (theme: string) => {
+  const getStaticImage = (theme: string): string => {
     const themeUpper = theme?.toUpperCase() || "";
-    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl;
-    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl;
-    if (themeUpper === 'TIPS' || themeUpper === 'POLICY') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl;
+    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl || "";
+    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl || "";
+    if (themeUpper === 'TIPS' || themeUpper === 'POLICY') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl || "";
     if (['GOURMET', 'HOTEL', 'TOUR', 'TRAVEL', 'CULTURE', 'LIFE'].includes(themeUpper)) {
-       return PlaceHolderImages.find(img => img.id === (themeUpper === 'GOURMET' ? 'gourmet-hero' : 'travel-hero'))?.imageUrl;
+       return PlaceHolderImages.find(img => img.id === (themeUpper === 'GOURMET' ? 'gourmet-hero' : 'travel-hero'))?.imageUrl || "";
     }
-    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl;
+    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl || "";
   };
 
   const getDisplayImage = (post: any) => {
@@ -102,16 +102,16 @@ export default function BlogLandingPage() {
 
           if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) {
              const subId = dramaSubs[imgCounter % dramaSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           } else if (themeUpper === 'VLOG') {
              const subId = vlogSubs[imgCounter % vlogSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           } else if (themeUpper === 'TIPS' || themeUpper === 'POLICY') {
              const subId = tipsSubs[imgCounter % tipsSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           } else {
              const subId = travelSubs[imgCounter % travelSubs.length];
-             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme);
+             src = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(heroPost.theme) || null;
           }
         }
 

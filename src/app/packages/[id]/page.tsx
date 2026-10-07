@@ -92,13 +92,13 @@ export default function PackageDetailPage() {
     });
   }, [rawAssets]);
 
-  const getStaticImage = (theme: string) => {
+  const getStaticImage = (theme: string): string => {
     const themeUpper = theme?.toUpperCase() || "";
-    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl;
-    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl;
-    if (themeUpper === 'TIPS' || themeUpper === 'POLICY') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl;
-    if (themeUpper === 'GOURMET') return PlaceHolderImages.find(img => img.id === 'gourmet-hero')?.imageUrl;
-    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl;
+    if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) return PlaceHolderImages.find(img => img.id === 'drama-hero')?.imageUrl || "";
+    if (themeUpper === 'VLOG') return PlaceHolderImages.find(img => img.id === 'vlog-hero')?.imageUrl || "";
+    if (themeUpper === 'TIPS' || themeUpper === 'POLICY') return PlaceHolderImages.find(img => img.id === 'tips-hero')?.imageUrl || "";
+    if (themeUpper === 'GOURMET') return PlaceHolderImages.find(img => img.id === 'gourmet-hero')?.imageUrl || "";
+    return PlaceHolderImages.find(img => img.id === 'travel-hero')?.imageUrl || "";
   };
 
   const getYouTubeEmbedUrl = (url: string) => {
@@ -183,7 +183,7 @@ export default function PackageDetailPage() {
   };
 
   const renderMappedContent = (html: string) => {
-    if (!html) return null;
+    if (!html || !pkg) return null;
     const parts = html.split(/(<img[^>]*>)/g);
     let imgCounter = 0;
     
@@ -206,13 +206,13 @@ export default function PackageDetailPage() {
           
           if (['DRAMA', 'MOVIE', 'SHOW', 'ENTERTAINMENT'].includes(themeUpper)) {
              const subId = dramaSubs[imgCounter % dramaSubs.length];
-             displaySrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(pkg.theme);
+             displaySrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(pkg.theme) || null;
           } else if (themeUpper === 'VLOG') {
              const subId = vlogSubs[imgCounter % vlogSubs.length];
-             displaySrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(pkg.theme);
+             displaySrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(pkg.theme) || null;
           } else {
              const subId = travelSubs[imgCounter % travelSubs.length];
-             displaySrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(pkg.theme);
+             displaySrc = PlaceHolderImages.find(img => img.id === subId)?.imageUrl || getStaticImage(pkg.theme) || null;
           }
         }
 

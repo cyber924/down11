@@ -41,13 +41,13 @@ export function useFirebase() {
 }
 
 export function useFirebaseApp() {
-  return useFirebase().firebaseApp;
+  return useFirebase().firebaseApp as FirebaseApp;
 }
 
 export function useFirestore() {
-  return useFirebase().firestore;
+  return useFirebase().firestore as Firestore;
 }
 
 export function useAuth() {
-  return useFirebase().auth;
+  return useFirebase().auth as Auth;
 }

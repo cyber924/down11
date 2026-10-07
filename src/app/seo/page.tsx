@@ -162,7 +162,7 @@ export default function SEOControlPage() {
       return;
     }
 
-    const chunks = [];
+    const chunks: string[][] = [];
     for (let i = 0; i < selectedUrls.length; i += 10) {
       chunks.push(selectedUrls.slice(i, i + 10));
     }
